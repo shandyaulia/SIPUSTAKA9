@@ -32,7 +32,13 @@
                     <x-nav-link :href="route('peminjaman.index')" :active="request()->routeIs('peminjaman.*')">
                         {{ __('Peminjaman') }}
                     </x-nav-link>
-                    
+
+                    @role('Super Admin|Admin')
+                        <x-nav-link :href="route('pengembalian.index')" :active="request()->routeIs('pengembalian.*')">
+                            {{ __('Pengembalian') }}
+                        </x-nav-link>
+                    @endrole
+
                     <x-nav-link :href="route('denda.index')" :active="request()->routeIs('denda.*')">
                         {{ __('Denda') }}
                     </x-nav-link>

@@ -35,6 +35,7 @@ Route::middleware(['auth', 'verified'])->group(function () {
     });
 
     Route::resource('peminjaman', PeminjamanController::class);
+    Route::get('/pengembalian', [PengembalianController::class, 'index'])->name('pengembalian.index');
     Route::resource('denda', DendaController::class);
 
     Route::middleware(['role:Super Admin'])->group(function () {
